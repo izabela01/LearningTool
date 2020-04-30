@@ -24,7 +24,7 @@ var_dump($food);
 echo "<br>";
 
 
-// Instansiating an object
+// Taking the object $food and converting it into an array called $foodArray
 $foodArray = (array)$food;
 echo "After conversion :";
 var_dump($foodArray);
