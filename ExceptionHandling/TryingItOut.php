@@ -1,30 +1,27 @@
 <?php
 
 
-$dsn = "http://localhost/phpmyadmin/db_structure.php?server=1&db=LearningTool";
-$user = "root";
-$password = null;
-$options = null;
+
+const DB_DSN = "http://localhost/phpmyadmin/db_structure.php?server=1&db=LearningTool";
+const DB_USER = 'root';
+const DB_PASS = '';
 
 
 
-//
-//try{
-//    $Obj = new PDO($dsn, $user, $password, $options);
-//    $Obj->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//           
-//     $SST = $Obj->prepare("Insert into Customer (FirstName, NoOnLoan) VALUES (:firstname,:NoOnLoan)");    
-//     $SST->bindParam(":firstname", $FirstName);
-//     $SST->bindParam(":NoOnLoan", $NoOnLoan);
-//} catch (Exception $ex) {
-//
-//}
-//
-//
-//// line 25 is throwing an error :(
-//$FirstName = "Jill";
-//$NoOnLoan = 2;
-//$SST->execute();
+    $Obj = new PDO($DB_DSN, $DB_USER, $DB_PASS);
+    $Obj->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+           
+     $SST = $Obj->prepare("Insert into Customer(FirstName, NoOnLoan) VALUES (:firstname,:NoOnLoan)");    
+     $SST->bindParam(":firstname", $FirstName);
+     $SST->bindParam(":NoOnLoan", $NoOnLoan);
+
+
+
+
+// line 25 is throwing an error :(
+$FirstName = "Jill";
+$NoOnLoan = 2;
+$SST->execute();
 
 
 // Mockup member class with a checkoutMedia class which throws an exception if the $total no of items
@@ -128,3 +125,4 @@ catch (UnknownUser $ex){
 catch (TooManyMediaItemsSorry $ex) {
  echo PHP_EOL .  $ex->getMessage();
 }
+
