@@ -5,7 +5,7 @@
  */
 
 
-const DB_DSN = 'mysql:host=localhost;dbname=librarydatabasev2';
+const DB_DSN = 'mysql:host=localhost;dbname=Libs03';
 const DB_USER = 'root';
 const DB_PASS = '';
 
